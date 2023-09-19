@@ -21,13 +21,15 @@ class Chat extends StatefulWidget {
 }
 
 class _ChatState extends State<Chat> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
               padding: const EdgeInsets.only(
@@ -104,17 +106,71 @@ class _ChatState extends State<Chat> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 11.1),
+            Container(
+              height: 610,
+              width: 360,
+              padding: const EdgeInsets.only(top: 22.22, right: 1, left: 1),
               child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (),
-              ),
+                  itemCount: 7,
+                  itemBuilder: (context, index) {
+                    return const Chats(
+                        imagePath: 'images/avatar.png',
+                        name: 'Morrison Boakye Boamah',
+                        message: 'Have you finished the Chat page?',
+                        totalMessages: '3');
+                  }),
             ),
           ],
         ),
-        bottomNavigationBar: const BottomAppBar(
-          height: 56.67,
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          selectedIconTheme:
+              const IconThemeData(color: Color(0xff6610f2), size: 23.05),
+          selectedItemColor: const Color(0xff6610f2),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'icons/courses.png',
+                  height: 20.05,
+                  width: 20.05,
+                  color: const Color(0xff6610f2),
+                ),
+                label: 'Courses'),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'icons/courses.svg',
+                  height: 20.05,
+                  width: 20.05,
+                ),
+                label: 'Chats'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'icons/home.png',
+                  height: 20.05,
+                  width: 20.05,
+                ),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'icons/notification.png',
+                  height: 20.05,
+                  width: 20.05,
+                ),
+                label: 'Notification'),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  'icons/profile.png',
+                  height: 20.05,
+                  width: 20.05,
+                ),
+                label: 'Profile'),
+          ],
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
         ),
       ),
     );

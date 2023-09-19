@@ -27,6 +27,9 @@ class _FilterState extends State<Filter> {
       height: 19.44,
       width: 85.56,
       child: ChoiceChip(
+        onSelected: (value) {
+
+        },
           selectedColor: const Color(0xff6610f2),
           backgroundColor: const Color(0xfff2f3f5),
           labelPadding: EdgeInsets.only(

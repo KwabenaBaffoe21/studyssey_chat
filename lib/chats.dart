@@ -15,9 +15,10 @@ class Chats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3.66),
+      padding: const EdgeInsets.symmetric(vertical: 3.66,horizontal: 1),
       child: SizedBox(
-        height: 120, // Adjust the desired height
+        height: 62.57,
+        width: 360,// Adjust the desired height
         child: ListTile(
           onTap: () {},
           leading: CircleAvatar(
