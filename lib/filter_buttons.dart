@@ -45,7 +45,7 @@ class _FilterState extends State<Filter> {
             style: GoogleFonts.manrope(
               fontSize: 11.1,
               fontWeight: FontWeight.w500,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           selected: isSelected),

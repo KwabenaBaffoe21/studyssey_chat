@@ -36,11 +36,14 @@ class _ChatState extends State<Chat> {
                   top: 11.11, bottom: 11.11, right: 31.11, left: 31.11),
               child: Row(
                 children: [
+                  // Menu Button
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.sort),
                   ),
                   const SizedBox(width: 104),
+
+                  //Title
                   Padding(
                     padding: const EdgeInsets.only(top: 18.46),
                     child: Text(
@@ -52,6 +55,8 @@ class _ChatState extends State<Chat> {
                 ],
               ),
             ),
+
+            //Search
             Padding(
               padding:
                   const EdgeInsets.only(top: 11.1, right: 31.11, left: 31.11),
@@ -83,6 +88,8 @@ class _ChatState extends State<Chat> {
                 ),
               ),
             ),
+
+            //Filter Buttons
             const Padding(
               padding: EdgeInsets.only(top: 11.1, right: 31.11, left: 31.11),
               child: Row(
@@ -106,6 +113,8 @@ class _ChatState extends State<Chat> {
                 ],
               ),
             ),
+
+            //Chats
             Container(
               height: 610,
               width: 360,
@@ -122,45 +131,44 @@ class _ChatState extends State<Chat> {
             ),
           ],
         ),
+
+        // Bottom Navigation Bar
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
-          selectedIconTheme:
-              const IconThemeData(color: Color(0xff6610f2), size: 23.05),
           selectedItemColor: const Color(0xff6610f2),
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'icons/courses.png',
-                  height: 20.05,
-                  width: 20.05,
-                  color: const Color(0xff6610f2),
-                ),
-                label: 'Courses'),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'icons/courses.svg',
                   height: 20.05,
                   width: 20.05,
                 ),
-                label: 'Chats'),
+                label: 'Courses'),
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'icons/home.png',
+                icon: SvgPicture.asset(
+                  'icons/chat.svg',
+                  height: 20.05,
+                  width: 20.05,
+                ),
+                label: 'Chat'),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  'icons/home.svg',
                   height: 20.05,
                   width: 20.05,
                 ),
                 label: 'Home'),
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'icons/notification.png',
+                icon: SvgPicture.asset(
+                  'icons/notification.svg',
                   height: 20.05,
                   width: 20.05,
                 ),
                 label: 'Notification'),
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'icons/profile.png',
+                icon: SvgPicture.asset(
+                  'icons/profile.svg',
                   height: 20.05,
                   width: 20.05,
                 ),
