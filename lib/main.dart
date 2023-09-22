@@ -27,6 +27,7 @@ class _ChatState extends State<Chat> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -45,7 +46,7 @@ class _ChatState extends State<Chat> {
 
                   //Title
                   Padding(
-                    padding: const EdgeInsets.only(top: 18.46),
+                    padding: const EdgeInsets.only(top: 11.61),
                     child: Text(
                       'Chat',
                       style: GoogleFonts.manrope(
@@ -115,19 +116,33 @@ class _ChatState extends State<Chat> {
             ),
 
             //Chats
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 610,
+                width: 360,
+                padding: const EdgeInsets.only(top: 22.22, right: 1, left: 1),
+                child: ListView.builder(
+                    itemCount: 7,
+                    itemBuilder: (context, index) {
+                      return const Chats(
+                          imagePath: 'images/avatar.png',
+                          name: 'Morrison Boakye Boamah',
+                          message: 'Have you finished the Chat page?',
+                          totalMessages: '3');
+                    }),
+              ),
+            ),
             Container(
-              height: 610,
-              width: 360,
-              padding: const EdgeInsets.only(top: 22.22, right: 1, left: 1),
-              child: ListView.builder(
-                  itemCount: 7,
-                  itemBuilder: (context, index) {
-                    return const Chats(
-                        imagePath: 'images/avatar.png',
-                        name: 'Morrison Boakye Boamah',
-                        message: 'Have you finished the Chat page?',
-                        totalMessages: '3');
-                  }),
+              height: 65.45,
+              width: 65.45,
+              padding: const EdgeInsets.only(left: 300,bottom: 26.29),
+              child: FloatingActionButton(
+                onPressed: () {},
+                backgroundColor: const Color(0xff6610f2),
+                tooltip: 'Add New Chat',
+                child: const Icon(Icons.add),
+              ),
             ),
           ],
         ),
